@@ -19,7 +19,7 @@ public class OpenAIService {
     public String getPrediction(String prompt) throws Exception {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(API_URL);
-//        httpPost.setHeader("Content-Type", "application/json");
+        httpPost.setHeader("Content-Type", "application/json");
         httpPost.setHeader("Authorization", "Bearer " + apiKey);
 
         String json = "{ \"prompt\": \"" + prompt + "\", \"max_tokens\": 100 }";
